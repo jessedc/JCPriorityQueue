@@ -20,13 +20,6 @@
 
 @synthesize queue = queue_;
 
-
-/* 
- - (void)insertObject:(id)object atIndex:(NSUInteger)idx;
- - (void)removeObjectAtIndex:(NSUInteger)idx;
- - (void)replaceObjectAtIndex:(NSUInteger)idx withObject:(id)object;
-*/
-
 - (id)init;
 {
   if ((self = [super init]))
@@ -42,54 +35,46 @@
 #pragma mark - JCPriorityQueue
 
 - (void)addObject:(id<JCPriorityQueueObject>)object;
-{
-  NSUInteger size = [[self queue] count];
-  
-  NSUInteger newIndex = size;
-  NSUInteger parentIndex = newIndex / 2;
-  
-  if (parentIndex == newIndex)
-  {
-    [[self queue] addObject:object];
-    return;
-  }
-  
-  id<JCPriorityQueueObject> parent = [[self queue] objectAtIndex:parentIndex];
-  
-  while ([object value] < [parent value])
-  {
-    //replacing
-    [[self queue] replaceObjectAtIndex:parentIndex withObject:object];
-    [[self queue] insertObject:parent atIndex:newIndex];
+{  
+  NSUInteger last_index = self.queue.count;
+  NSUInteger parent_index = last_index / 2;
 
-    newIndex = parentIndex;
-    parentIndex = newIndex / 2;
+  [self.queue addObject:object];
+  
+  id<JCPriorityQueueObject> parent = [self.queue objectAtIndex:parent_index];
+  
+  while (object.value < parent.value) //compare with parent
+  {
+    [self.queue removeObject:object];
+    [self.queue insertObject:object atIndex:parent_index];
     
-    parent = [[self queue] objectAtIndex:parentIndex];
+    [self.queue removeObject:parent];
+    [self.queue insertObject:parent atIndex:last_index]; //swap
+    
+    last_index = parent_index; //increment
+    parent_index /= 2;
+    
+    parent = [self.queue objectAtIndex:parent_index]; //reasign parent
   }
   
-//  for (i = ++size; [(id<JCPriorityQueueObject>)[[self queue] objectAtIndex:i/2] value] > [object value]; i /= 2)
-//  {
-//    id<JCPriorityQueueObject> current = (id<JCPriorityQueueObject>)[[self queue] objectAtIndex:i/2];
-//    
-//    NSLog(@"i = %lu | current: %lu  object: %lu count: %lu", i, [current value], [object value], [[self queue] count]);
-    
-//    [[self queue] replaceObjectAtIndex:i withObject:[[self queue] objectAtIndex:i/2]];
-//  }
   
-  NSLog(@"Queue: %@", [self queue]);
-  
-  //[[self queue] replaceObjectAtIndex:i withObject:object];
 }
 
 - (id<JCPriorityQueueObject>)first;
 {
-  return [[self queue] objectAtIndex:0];
+  NSAssert(self.queue.count > 1, @"Queue is Empty");
+
+  return [self.queue objectAtIndex:1];
 }
 
 - (NSUInteger)count;
 {
-  return [[self queue] count];
+  return self.queue.count;
+}
+
+-(NSString *)description;
+{
+  return [[self queue] description];
 }
 
 @end
