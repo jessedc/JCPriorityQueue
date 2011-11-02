@@ -30,23 +30,34 @@ int main (int argc, const char * argv[])
       
 //      NSLog(@"%@", m_array);
       [queue addObject:ob1];
-      NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
+      //NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
+      //NSLog(@"Queue: %@", queue);
       
       [queue addObject:ob2];
-      NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
-
-      //[queue addObject:ob3];
       //NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
+      //NSLog(@"Queue: %@", queue);
       
-      //[queue addObject:ob4];
-      //NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
-
-      //[queue addObject:ob5];
-      //NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
-
-      //[queue addObject:ob6];
-      //NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
-
+      [queue addObject:ob3];
+      ///NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
+      //NSLog(@"Queue: %@", queue);
+      
+      [queue addObject:ob4];
+    //  NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
+      //NSLog(@"Queue: %@", queue);
+      
+      [queue addObject:ob5];
+  //    NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
+      //NSLog(@"Queue: %@", queue);
+      
+      [queue addObject:ob6];
+      
+      [queue addObject:[[PriorityObject alloc] initWithValue:10]];
+      [queue addObject:[[PriorityObject alloc] initWithValue:5]];
+      [queue addObject:[[PriorityObject alloc] initWithValue:5]];
+      [queue addObject:[[PriorityObject alloc] initWithValue:1]];
+//      NSLog(@"Queue first: %lu Queue Count: %lu", [[queue first] value], [queue count]);
+      NSLog(@"Queue: %@", queue);
+      
     }
     return 0;
 }
