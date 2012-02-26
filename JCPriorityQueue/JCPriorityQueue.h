@@ -21,5 +21,6 @@
 
 - (id<JCPriorityQueueObject>)first;
 - (NSUInteger)count;
+- (void)clear;
 
 @end

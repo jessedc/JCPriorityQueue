@@ -30,10 +30,15 @@
 {
   if ((self = [super init]))
   {
-    self.queue = [[NSMutableOrderedSet alloc] initWithObject:[[JCPriorityQueueHeaderNode alloc] init]];;
+    [self clear];
   }
 
   return self;
+}
+
+- (void)clear
+{
+  self.queue = [[NSMutableOrderedSet alloc] initWithObject:[[JCPriorityQueueHeaderNode alloc] init]];
 }
 
 #pragma mark - JCPriorityQueue
