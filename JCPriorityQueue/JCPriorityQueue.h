@@ -1,6 +1,5 @@
 //
 //  JCPriorityQueue.h
-//  JCPriorityQueue
 //
 //  Created by Jesse Collis on 10/10/11.
 //  Copyright 2011 JC Multimedia Design. All rights reserved.
@@ -9,9 +8,10 @@
 #import <Foundation/Foundation.h>
 
 @protocol JCPriorityQueueObject <NSObject>
+- (NSInteger)value;
+@end
 
-@property (nonatomic, assign) NSUInteger value;
-
+@interface JCPriorityQueueHeaderNode : NSObject <JCPriorityQueueObject>
 @end
 
 @interface JCPriorityQueue : NSObject
@@ -21,11 +21,5 @@
 
 - (id<JCPriorityQueueObject>)first;
 - (NSUInteger)count;
-
-@end
-
-@interface PriorityObject : NSObject <JCPriorityQueueObject>
-
-- (id)initWithValue:(NSUInteger)value;
 
 @end

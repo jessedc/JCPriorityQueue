@@ -7,51 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88524AE71442AFA6009243CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88524AE61442AFA6009243CB /* Foundation.framework */; };
-		88524AEA1442AFA6009243CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88524AE91442AFA6009243CB /* main.m */; };
-		88524AEE1442AFA6009243CB /* JCPriorityQueue.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88524AED1442AFA6009243CB /* JCPriorityQueue.1 */; };
-		88524AF61442AFDE009243CB /* JCPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 88524AF51442AFDE009243CB /* JCPriorityQueue.m */; };
+		881925CB14FA3A1D00189ADF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881925CA14FA3A1D00189ADF /* SenTestingKit.framework */; };
+		881925CD14FA3A1D00189ADF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881925CC14FA3A1D00189ADF /* Cocoa.framework */; };
+		881925D714FA3A1D00189ADF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 881925D514FA3A1D00189ADF /* InfoPlist.strings */; };
+		881925DA14FA3A1D00189ADF /* JCPriorityQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 881925D914FA3A1D00189ADF /* JCPriorityQueueTests.m */; };
+		881925E014FA3A6500189ADF /* JCPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 88524AF51442AFDE009243CB /* JCPriorityQueue.m */; };
+		881925E314FA3D6100189ADF /* PriotityTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 881925E214FA3D6100189ADF /* PriotityTestObject.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		88524AE01442AFA6009243CB /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-				88524AEE1442AFA6009243CB /* JCPriorityQueue.1 in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		88524AE21442AFA6009243CB /* JCPriorityQueue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JCPriorityQueue; sourceTree = BUILT_PRODUCTS_DIR; };
+		881925C914FA3A1D00189ADF /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		881925CA14FA3A1D00189ADF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		881925CC14FA3A1D00189ADF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		881925D414FA3A1D00189ADF /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
+		881925D614FA3A1D00189ADF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		881925D814FA3A1D00189ADF /* JCPriorityQueueTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JCPriorityQueueTests.h; sourceTree = "<group>"; };
+		881925D914FA3A1D00189ADF /* JCPriorityQueueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JCPriorityQueueTests.m; sourceTree = "<group>"; };
+		881925DB14FA3A1D00189ADF /* Unit Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit Tests-Prefix.pch"; sourceTree = "<group>"; };
+		881925E114FA3D6100189ADF /* PriotityTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriotityTestObject.h; sourceTree = "<group>"; };
+		881925E214FA3D6100189ADF /* PriotityTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriotityTestObject.m; sourceTree = "<group>"; };
 		88524AE61442AFA6009243CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		88524AE91442AFA6009243CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		88524AEC1442AFA6009243CB /* JCPriorityQueue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JCPriorityQueue-Prefix.pch"; sourceTree = "<group>"; };
-		88524AED1442AFA6009243CB /* JCPriorityQueue.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = JCPriorityQueue.1; sourceTree = "<group>"; };
 		88524AF41442AFDE009243CB /* JCPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCPriorityQueue.h; sourceTree = "<group>"; };
 		88524AF51442AFDE009243CB /* JCPriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCPriorityQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		88524ADF1442AFA6009243CB /* Frameworks */ = {
+		881925C514FA3A1D00189ADF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88524AE71442AFA6009243CB /* Foundation.framework in Frameworks */,
+				881925CB14FA3A1D00189ADF /* SenTestingKit.framework in Frameworks */,
+				881925CD14FA3A1D00189ADF /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881925D214FA3A1D00189ADF /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				881925D814FA3A1D00189ADF /* JCPriorityQueueTests.h */,
+				881925D914FA3A1D00189ADF /* JCPriorityQueueTests.m */,
+				881925D314FA3A1D00189ADF /* Supporting Files */,
+			);
+			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		881925D314FA3A1D00189ADF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				881925E114FA3D6100189ADF /* PriotityTestObject.h */,
+				881925E214FA3D6100189ADF /* PriotityTestObject.m */,
+				881925D414FA3A1D00189ADF /* Unit Tests-Info.plist */,
+				881925D514FA3A1D00189ADF /* InfoPlist.strings */,
+				881925DB14FA3A1D00189ADF /* Unit Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		88524AD71442AFA6009243CB = {
 			isa = PBXGroup;
 			children = (
 				88524AE81442AFA6009243CB /* JCPriorityQueue */,
+				881925D214FA3A1D00189ADF /* Unit Tests */,
 				88524AE51442AFA6009243CB /* Frameworks */,
 				88524AE31442AFA6009243CB /* Products */,
 			);
@@ -60,7 +79,7 @@
 		88524AE31442AFA6009243CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88524AE21442AFA6009243CB /* JCPriorityQueue */,
+				881925C914FA3A1D00189ADF /* Unit Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				88524AE61442AFA6009243CB /* Foundation.framework */,
+				881925CA14FA3A1D00189ADF /* SenTestingKit.framework */,
+				881925CC14FA3A1D00189ADF /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -76,42 +97,32 @@
 		88524AE81442AFA6009243CB /* JCPriorityQueue */ = {
 			isa = PBXGroup;
 			children = (
-				88524AE91442AFA6009243CB /* main.m */,
-				88524AED1442AFA6009243CB /* JCPriorityQueue.1 */,
-				88524AEB1442AFA6009243CB /* Supporting Files */,
 				88524AF41442AFDE009243CB /* JCPriorityQueue.h */,
 				88524AF51442AFDE009243CB /* JCPriorityQueue.m */,
 			);
 			path = JCPriorityQueue;
 			sourceTree = "<group>";
 		};
-		88524AEB1442AFA6009243CB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				88524AEC1442AFA6009243CB /* JCPriorityQueue-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88524AE11442AFA6009243CB /* JCPriorityQueue */ = {
+		881925C814FA3A1D00189ADF /* Unit Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88524AF11442AFA6009243CB /* Build configuration list for PBXNativeTarget "JCPriorityQueue" */;
+			buildConfigurationList = 881925DE14FA3A1D00189ADF /* Build configuration list for PBXNativeTarget "Unit Tests" */;
 			buildPhases = (
-				88524ADE1442AFA6009243CB /* Sources */,
-				88524ADF1442AFA6009243CB /* Frameworks */,
-				88524AE01442AFA6009243CB /* CopyFiles */,
+				881925C414FA3A1D00189ADF /* Sources */,
+				881925C514FA3A1D00189ADF /* Frameworks */,
+				881925C614FA3A1D00189ADF /* Resources */,
+				881925C714FA3A1D00189ADF /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = JCPriorityQueue;
-			productName = JCPriorityQueue;
-			productReference = 88524AE21442AFA6009243CB /* JCPriorityQueue */;
-			productType = "com.apple.product-type.tool";
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = 881925C914FA3A1D00189ADF /* Unit Tests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -134,24 +145,91 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88524AE11442AFA6009243CB /* JCPriorityQueue */,
+				881925C814FA3A1D00189ADF /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		881925C614FA3A1D00189ADF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				881925D714FA3A1D00189ADF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		881925C714FA3A1D00189ADF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		88524ADE1442AFA6009243CB /* Sources */ = {
+		881925C414FA3A1D00189ADF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88524AEA1442AFA6009243CB /* main.m in Sources */,
-				88524AF61442AFDE009243CB /* JCPriorityQueue.m in Sources */,
+				881925DA14FA3A1D00189ADF /* JCPriorityQueueTests.m in Sources */,
+				881925E014FA3A6500189ADF /* JCPriorityQueue.m in Sources */,
+				881925E314FA3D6100189ADF /* PriotityTestObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		881925D514FA3A1D00189ADF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				881925D614FA3A1D00189ADF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		881925DC14FA3A1D00189ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Unit Tests/Unit Tests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "Unit Tests/Unit Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		881925DD14FA3A1D00189ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Unit Tests/Unit Tests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "Unit Tests/Unit Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		88524AEF1442AFA6009243CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -199,41 +277,22 @@
 			};
 			name = Release;
 		};
-		88524AF21442AFA6009243CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JCPriorityQueue/JCPriorityQueue-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		88524AF31442AFA6009243CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JCPriorityQueue/JCPriorityQueue-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		881925DE14FA3A1D00189ADF /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				881925DC14FA3A1D00189ADF /* Debug */,
+				881925DD14FA3A1D00189ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		88524ADC1442AFA6009243CB /* Build configuration list for PBXProject "JCPriorityQueue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88524AEF1442AFA6009243CB /* Debug */,
 				88524AF01442AFA6009243CB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		88524AF11442AFA6009243CB /* Build configuration list for PBXNativeTarget "JCPriorityQueue" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				88524AF21442AFA6009243CB /* Debug */,
-				88524AF31442AFA6009243CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

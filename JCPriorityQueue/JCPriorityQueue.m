@@ -1,6 +1,5 @@
 //
 //  JCPriorityQueue.m
-//  JCPriorityQueue
 //
 //  Created by Jesse Collis on 10/10/11.
 //  Copyright 2011 JC Multimedia Design. All rights reserved.
@@ -8,25 +7,30 @@
 
 #import "JCPriorityQueue.h"
 
+@implementation JCPriorityQueueHeaderNode
+
+- (NSInteger)value
+{
+  return NSIntegerMin;
+}
+
+@end
+
 @interface JCPriorityQueue()
-
 @property (atomic, strong) NSMutableOrderedSet *queue;
-
 @end
 
 @implementation JCPriorityQueue
 
 #pragma mark - Properties
 
-@synthesize queue = queue_;
+@synthesize queue = _queue;
 
-- (id)init;
+- (id)init
 {
   if ((self = [super init]))
   {
-    NSMutableOrderedSet *new_set = [[NSMutableOrderedSet alloc] init];
-    [new_set addObject:[[PriorityObject alloc] init]];
-    self.queue = new_set;
+    self.queue = [[NSMutableOrderedSet alloc] initWithObject:[[JCPriorityQueueHeaderNode alloc] init]];;
   }
 
   return self;
@@ -34,7 +38,7 @@
 
 #pragma mark - JCPriorityQueue
 
-- (void)addObject:(id<JCPriorityQueueObject>)object;
+- (void)addObject:(id<JCPriorityQueueObject>)object
 {  
   NSUInteger last_index = [self count];
   NSUInteger parent_index = last_index / 2;
@@ -54,16 +58,27 @@
     last_index = parent_index; //increment
     parent_index /= 2;
     
-    parent = [self.queue objectAtIndex:parent_index]; //reasign parent
+    parent = [self.queue objectAtIndex:parent_index]; //re-assign parent
   }
 }
 
-- (id<JCPriorityQueueObject>)popFirst;
+- (id<JCPriorityQueueObject>)popFirst
 {
   id<JCPriorityQueueObject> first_object_to_return = [self first];
+  
+  if (nil == first_object_to_return)
+  {
+    return nil;
+  }
  
   NSUInteger first_index = 1;
   NSUInteger last_index = [self count] - 1;
+  
+  if (last_index == first_index)
+  {
+    [self.queue removeObjectAtIndex:last_index];
+    return first_object_to_return;
+  }
   
   id<JCPriorityQueueObject> last_object = [self.queue objectAtIndex:last_index];
   [self.queue removeObjectAtIndex:last_index];
@@ -108,49 +123,21 @@
   return first_object_to_return;
 }
 
-- (id<JCPriorityQueueObject>)first;
+- (id<JCPriorityQueueObject>)first
 {
-  NSAssert(self.queue.count > 1, @"Queue is Empty");
+  if (self.queue.count < 2) return nil;
 
   return [self.queue objectAtIndex:1];
 }
 
-- (NSUInteger)count;
+- (NSUInteger)count
 {
   return self.queue.count;
 }
 
--(NSString *)description;
+-(NSString *)description
 {
   return [[self queue] description];
 }
 
 @end
-
-#pragma mark - PriorityObject
-
-@implementation PriorityObject
-
-@synthesize value = value_;
-
-- (id)init;
-{
-  return [self initWithValue:0];
-}
-
-- (id)initWithValue:(NSUInteger)value;
-{
-  if ((self = [super init]))
-  {
-    value_ = value;
-  }
-  return self;
-}
-
-- (NSString *)description;
-{
-  return [NSString stringWithFormat:@"%lu",value_];
-}
-
-@end
-
