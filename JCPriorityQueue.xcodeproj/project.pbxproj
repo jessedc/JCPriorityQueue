@@ -8,17 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		881925CB14FA3A1D00189ADF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881925CA14FA3A1D00189ADF /* SenTestingKit.framework */; };
-		881925CD14FA3A1D00189ADF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881925CC14FA3A1D00189ADF /* Cocoa.framework */; };
 		881925D714FA3A1D00189ADF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 881925D514FA3A1D00189ADF /* InfoPlist.strings */; };
 		881925DA14FA3A1D00189ADF /* JCPriorityQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 881925D914FA3A1D00189ADF /* JCPriorityQueueTests.m */; };
 		881925E014FA3A6500189ADF /* JCPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 88524AF51442AFDE009243CB /* JCPriorityQueue.m */; };
 		881925E314FA3D6100189ADF /* PriotityTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 881925E214FA3D6100189ADF /* PriotityTestObject.m */; };
+		88C8EEA414FA5E0C00916603 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C8EEA314FA5E0C00916603 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		881925C914FA3A1D00189ADF /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		881925CA14FA3A1D00189ADF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		881925CC14FA3A1D00189ADF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		881925D414FA3A1D00189ADF /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		881925D614FA3A1D00189ADF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		881925D814FA3A1D00189ADF /* JCPriorityQueueTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JCPriorityQueueTests.h; sourceTree = "<group>"; };
@@ -29,6 +28,7 @@
 		88524AE61442AFA6009243CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88524AF41442AFDE009243CB /* JCPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCPriorityQueue.h; sourceTree = "<group>"; };
 		88524AF51442AFDE009243CB /* JCPriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCPriorityQueue.m; sourceTree = "<group>"; };
+		88C8EEA314FA5E0C00916603 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,8 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C8EEA414FA5E0C00916603 /* Cocoa.framework in Frameworks */,
 				881925CB14FA3A1D00189ADF /* SenTestingKit.framework in Frameworks */,
-				881925CD14FA3A1D00189ADF /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,9 +87,9 @@
 		88524AE51442AFA6009243CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88C8EEA314FA5E0C00916603 /* Cocoa.framework */,
 				88524AE61442AFA6009243CB /* Foundation.framework */,
 				881925CA14FA3A1D00189ADF /* SenTestingKit.framework */,
-				881925CC14FA3A1D00189ADF /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +287,7 @@
 				881925DD14FA3A1D00189ADF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88524ADC1442AFA6009243CB /* Build configuration list for PBXProject "JCPriorityQueue" */ = {
 			isa = XCConfigurationList;
