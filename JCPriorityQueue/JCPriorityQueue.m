@@ -39,7 +39,7 @@
 @end
 
 @interface JCPriorityQueue()
-@property (atomic, strong) NSMutableOrderedSet *queue;
+@property (atomic, strong) NSMutableArray *queue;
 @end
 
 @implementation JCPriorityQueue
@@ -60,7 +60,7 @@
 
 - (void)clear
 {
-  self.queue = [[NSMutableOrderedSet alloc] initWithObject:[[JCPriorityQueueHeaderNode alloc] init]];
+  self.queue = [[NSMutableArray alloc] initWithObjects:[[JCPriorityQueueHeaderNode alloc] init], nil];
 }
 
 #pragma mark - JCPriorityQueue
