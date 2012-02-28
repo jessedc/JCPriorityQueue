@@ -12,6 +12,9 @@
 		881925DA14FA3A1D00189ADF /* JCPriorityQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 881925D914FA3A1D00189ADF /* JCPriorityQueueTests.m */; };
 		881925E014FA3A6500189ADF /* JCPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 88524AF51442AFDE009243CB /* JCPriorityQueue.m */; };
 		881925E314FA3D6100189ADF /* PriotityTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 881925E214FA3D6100189ADF /* PriotityTestObject.m */; };
+		8898DE6A14FD01BB006E3FFB /* JCSuperPriorityQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8898DE6914FD01BB006E3FFB /* JCSuperPriorityQueue.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8898DE6E14FD0BE3006E3FFB /* JCSuperPriorityQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898DE6D14FD0BE3006E3FFB /* JCSuperPriorityQueueTests.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8898DE7014FD0E39006E3FFB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8898DE6F14FD0E39006E3FFB /* README.md */; };
 		88C8EEA414FA5E0C00916603 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C8EEA314FA5E0C00916603 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,11 @@
 		88524AE61442AFA6009243CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88524AF41442AFDE009243CB /* JCPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCPriorityQueue.h; sourceTree = "<group>"; };
 		88524AF51442AFDE009243CB /* JCPriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCPriorityQueue.m; sourceTree = "<group>"; };
+		8898DE6814FD01BB006E3FFB /* JCSuperPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSuperPriorityQueue.h; sourceTree = "<group>"; };
+		8898DE6914FD01BB006E3FFB /* JCSuperPriorityQueue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JCSuperPriorityQueue.mm; sourceTree = "<group>"; };
+		8898DE6C14FD0BE3006E3FFB /* JCSuperPriorityQueueTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSuperPriorityQueueTests.h; sourceTree = "<group>"; };
+		8898DE6D14FD0BE3006E3FFB /* JCSuperPriorityQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSuperPriorityQueueTests.m; sourceTree = "<group>"; };
+		8898DE6F14FD0E39006E3FFB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		88C8EEA314FA5E0C00916603 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -49,6 +57,8 @@
 			children = (
 				881925D814FA3A1D00189ADF /* JCPriorityQueueTests.h */,
 				881925D914FA3A1D00189ADF /* JCPriorityQueueTests.m */,
+				8898DE6C14FD0BE3006E3FFB /* JCSuperPriorityQueueTests.h */,
+				8898DE6D14FD0BE3006E3FFB /* JCSuperPriorityQueueTests.m */,
 				881925D314FA3A1D00189ADF /* Supporting Files */,
 			);
 			path = "Unit Tests";
@@ -69,6 +79,7 @@
 		88524AD71442AFA6009243CB = {
 			isa = PBXGroup;
 			children = (
+				8898DE6F14FD0E39006E3FFB /* README.md */,
 				88524AE81442AFA6009243CB /* JCPriorityQueue */,
 				881925D214FA3A1D00189ADF /* Unit Tests */,
 				88524AE51442AFA6009243CB /* Frameworks */,
@@ -99,6 +110,8 @@
 			children = (
 				88524AF41442AFDE009243CB /* JCPriorityQueue.h */,
 				88524AF51442AFDE009243CB /* JCPriorityQueue.m */,
+				8898DE6814FD01BB006E3FFB /* JCSuperPriorityQueue.h */,
+				8898DE6914FD01BB006E3FFB /* JCSuperPriorityQueue.mm */,
 			);
 			path = JCPriorityQueue;
 			sourceTree = "<group>";
@@ -156,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				881925D714FA3A1D00189ADF /* InfoPlist.strings in Resources */,
+				8898DE7014FD0E39006E3FFB /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +199,8 @@
 				881925DA14FA3A1D00189ADF /* JCPriorityQueueTests.m in Sources */,
 				881925E014FA3A6500189ADF /* JCPriorityQueue.m in Sources */,
 				881925E314FA3D6100189ADF /* PriotityTestObject.m in Sources */,
+				8898DE6A14FD01BB006E3FFB /* JCSuperPriorityQueue.mm in Sources */,
+				8898DE6E14FD0BE3006E3FFB /* JCSuperPriorityQueueTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
