@@ -43,7 +43,7 @@ static const  NSInteger testData[25] = {
 
 - (void)testPriorityQueueReturnsNilWithEmptyQueue
 {
-  id<JCPriorityQueueObject> first = [_queue popFirst];
+  id<JCPriorityQueueObject> first = [_queue pop];
   STAssertNil(first,@"Empty Queue should return nil if empty");
 }
 
@@ -52,7 +52,7 @@ static const  NSInteger testData[25] = {
   [_queue addObject:[PriotityTestObject objectWithValue:10]];
   [_queue addObject:[PriotityTestObject objectWithValue:20]];
   
-  [_queue popFirst];
+  [_queue pop];
   
   STAssertEquals([_queue count], (NSUInteger)2, @"add two, pop one should leave a count of two (default is count of 1)");
 }
@@ -63,7 +63,7 @@ static const  NSInteger testData[25] = {
   id first_object = [PriotityTestObject objectWithValue:0]; 
   [_queue addObject:first_object];
   
-  id first_returned = [_queue popFirst];
+  id first_returned = [_queue pop];
   
   STAssertEquals(first_object, first_returned, @"Adding one object then popping that object should return the same objet");
 }
@@ -73,7 +73,7 @@ static const  NSInteger testData[25] = {
   id first_object = [PriotityTestObject objectWithValue:-49876];
   [_queue addObject:first_object];
   
-  id first_returned = [_queue popFirst];
+  id first_returned = [_queue pop];
   
   STAssertEquals(first_object, first_returned, @"Adding one object then popping that object should return the same objet");
 }
@@ -83,7 +83,7 @@ static const  NSInteger testData[25] = {
   id<JCPriorityQueueObject> first_object = [PriotityTestObject objectWithValue:10];
   [_queue addObject:first_object];
   
-  id<JCPriorityQueueObject> first_returned = [_queue popFirst];
+  id<JCPriorityQueueObject> first_returned = [_queue pop];
   
   STAssertEquals(first_object, first_returned, @"First element returned should be the same object originally added");
   STAssertEquals(first_object.value, (NSInteger)10, @"First element should be equal to the element added. Value was %d", first_returned.value);
@@ -96,19 +96,19 @@ static const  NSInteger testData[25] = {
   [_queue addObject:[PriotityTestObject objectWithValue:30]];
   [_queue addObject:[PriotityTestObject objectWithValue:40]];
   
-  id <JCPriorityQueueObject> obj = [_queue popFirst];
+  id <JCPriorityQueueObject> obj = [_queue pop];
   STAssertTrue(obj.value == 10, nil);
   
-  obj = [_queue popFirst];
+  obj = [_queue pop];
   STAssertTrue(obj.value == 20, nil);
 
-  obj = [_queue popFirst];
+  obj = [_queue pop];
   STAssertTrue(obj.value == 30, nil);
 
-  obj = [_queue popFirst];
+  obj = [_queue pop];
   STAssertTrue(obj.value == 40, nil);
   
-  obj = [_queue popFirst];
+  obj = [_queue pop];
   STAssertTrue(obj == nil, nil);
 }
 
@@ -132,7 +132,7 @@ static const  NSInteger testData[25] = {
     [_queue addObject:[PriotityTestObject objectWithValue:value]];
   }
   
-  id<JCPriorityQueueObject> first_out = [_queue popFirst];
+  id<JCPriorityQueueObject> first_out = [_queue pop];
   
   STAssertEquals(first_out.value, lowest_value, @"Popping the first value should be equal to the lowest entered");
 }

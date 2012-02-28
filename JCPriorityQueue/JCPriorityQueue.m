@@ -89,7 +89,7 @@
   }
 }
 
-- (id<JCPriorityQueueObject>)popFirst
+- (id<JCPriorityQueueObject>)pop
 {
   id<JCPriorityQueueObject> first_object_to_return = [self first];
   

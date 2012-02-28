@@ -39,7 +39,7 @@
 @interface JCPriorityQueue : NSObject
 
 - (void)addObject:(id<JCPriorityQueueObject>)object;
-- (id<JCPriorityQueueObject>)popFirst;
+- (id<JCPriorityQueueObject>)pop;
 
 - (id<JCPriorityQueueObject>)first;
 - (NSUInteger)count;
