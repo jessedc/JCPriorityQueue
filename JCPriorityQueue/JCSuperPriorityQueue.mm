@@ -31,13 +31,11 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
 {
   if ((self = [super init]))
   {
-    mCount = 0;
     //TODO: Optimise the allocation
     mCapacity = 100;
     mObjs = (struct JCPQNode *)malloc(mCapacity * sizeof(*mObjs));
     
-    std::make_heap(mObjs, mObjs + mCount, NodeLessThan);
-    mHeapified = YES;
+    [self clear];
   }
 
   return self;
@@ -48,6 +46,13 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
   free(mObjs);
 
   [super dealloc];
+}
+
+- (void)clear
+{
+  mCount = 0;
+  std::make_heap(mObjs, mObjs + mCount, NodeLessThan);
+  mHeapified = YES;  
 }
 
 - (unsigned)count
@@ -93,11 +98,6 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
   if ([self empty]) return nil;
   
   return mObjs[0].obj;
-}
-
-- (void)clear
-{
-  //TODO:
 }
 
 @end

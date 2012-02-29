@@ -92,5 +92,20 @@
   STAssertEquals(popped.value, (NSInteger)95595, nil);
 }
 
+- (void)testSuperPriorityQueueShouldClear
+{
+  [_queue addObject:[PriotityTestObject objectWithValue:10] value:10];
+  [_queue clear];
+  
+  STAssertTrue([_queue empty],@"Queue should be empty");
+  
+  id newObj = [PriotityTestObject objectWithValue:9001];
+  [_queue addObject:newObj value:9001];
+  
+  id gotObj = [_queue pop];
+  
+  STAssertEquals(newObj, gotObj, nil);
+}
+
 
 @end

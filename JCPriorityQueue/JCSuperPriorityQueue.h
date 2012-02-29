@@ -23,4 +23,6 @@
 - (unsigned)count;
 - (bool)empty;
 
+- (void)clear;
+
 @end
