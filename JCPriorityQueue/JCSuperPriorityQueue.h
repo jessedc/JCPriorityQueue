@@ -1,6 +1,5 @@
 //
 //  JCSuperPriorityQueue.h
-//  JCPriorityQueue
 //
 //  Created by Jesse Collis on 28/02/12.
 //  Copyright (c) 2012 JC Multimedia Design. All rights reserved.
@@ -19,7 +18,9 @@
 
 - (void)addObject:(id)obj value:(unsigned)value;
 - (id)pop;
+- (id)first; //does not pop
 
 - (unsigned)count;
+- (bool)empty;
 
 @end

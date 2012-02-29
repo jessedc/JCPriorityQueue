@@ -8,6 +8,7 @@
 
 #import "JCSuperPriorityQueueTests.h"
 #import "JCSuperPriorityQueue.h"
+#import "PriotityTestObject.h"
 
 @interface JCSuperPriorityQueueTests ()
 {
@@ -32,20 +33,63 @@
   _queue = nil;
 }
 
-- (void)testSuperPriorityQueueCanHandleStandardInput
+
+- (void)testSuperPriorityQueueReturnsNilWithEmptyQueue
 {
-  id object = [[NSObject alloc] init];
+  id first = [_queue pop];
+  STAssertNil(first, @"Empty Queue should return nil if empty");
+}
+
+- (void)testSuperPriorityQueueShowsCorrectFirstValueAndPopsItOff
+{
+  PriotityTestObject *added_first = [PriotityTestObject objectWithValue:76512];
+  [_queue addObject:added_first value:added_first.value];
   
-  [_queue addObject:[NSNull null] value:10];
-  [_queue addObject:[NSNull null] value:15];
-  [_queue addObject:[NSNull null] value:20];
-  [_queue addObject:object value:5];
-  [_queue addObject:[NSNull null] value:200];
-  [_queue addObject:[NSNull null] value:95595];
+  id first = [_queue first];
+  STAssertEquals(added_first, first, @"firsdt should equal first object");
   
-  id popped = [_queue pop];
+  first = [_queue pop];
+  STAssertEquals(added_first, first, @"firsdt should equal first object");
+}
+
+
+- (void)testSuperPriorityQueueReturnsCorrectObjectWhenZeroAddedAsSingleObject
+{
+  id first_object = [[[NSObject alloc] init] autorelease];
+  [_queue addObject:first_object value:0];
+
+  id first_returned = [_queue pop];
   
-  STAssertEquals(popped, object, nil);
+  STAssertEquals(first_object, first_returned, @"Adding one object then popping that object should return the same objet");
+}
+
+- (void)testSuperPriorityQueueCanHandleStandardInput
+{  
+  [_queue addObject:[PriotityTestObject objectWithValue:10] value:10];        //2
+  [_queue addObject:[PriotityTestObject objectWithValue:15] value:15];        //3
+  [_queue addObject:[PriotityTestObject objectWithValue:25] value:25];        //4
+  [_queue addObject:[PriotityTestObject objectWithValue:5] value:5];          //1
+  [_queue addObject:[PriotityTestObject objectWithValue:200] value:200];      //5
+  [_queue addObject:[PriotityTestObject objectWithValue:95595] value:95595];  //6
+  
+  PriotityTestObject *popped = [_queue pop];
+  
+  STAssertEquals(popped.value, (NSInteger)5, nil);
+  
+  popped = [_queue pop];
+  STAssertEquals(popped.value, (NSInteger)10, nil);
+  
+  popped = [_queue pop];
+  STAssertEquals(popped.value, (NSInteger)15, nil);  
+  
+  popped = [_queue pop];
+  STAssertEquals(popped.value, (NSInteger)25, nil);
+  
+  popped = [_queue pop];
+  STAssertEquals(popped.value, (NSInteger)200, nil);
+
+  popped = [_queue pop];
+  STAssertEquals(popped.value, (NSInteger)95595, nil);
 }
 
 

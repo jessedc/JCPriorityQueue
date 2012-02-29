@@ -21,7 +21,7 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
     return n1.val > n2.val;
   }
 
-  //FIXME: is it important or necessary to compare them at this poitn? 
+  //FIXME: is it important or necessary to compare them at this point? 
   return false; //(unsigned) n1.obj < (unsigned) n2.obj;
 }
 
@@ -32,8 +32,12 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
   if ((self = [super init]))
   {
     mCount = 0;
+    //TODO: Optimise the allocation
     mCapacity = 100;
     mObjs = (struct JCPQNode *)malloc(mCapacity * sizeof(*mObjs));
+    
+    std::make_heap(mObjs, mObjs + mCount, NodeLessThan);
+    mHeapified = YES;
   }
 
   return self;
@@ -46,20 +50,22 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
   [super dealloc];
 }
 
-- (void)buildHeap
-{
-  std::make_heap(mObjs, mObjs +mCount, NodeLessThan);
-  mHeapified = YES;
-}
-
 - (unsigned)count
 {
   return mCount;
 }
 
+- (bool)empty
+{
+  return (mCount < 1);
+}
+
 - (void)addObject:(id)obj value:(unsigned)val
 {
+  if (!mHeapified) return;
+
   mCount++;
+  
   if (mCount > mCapacity)
   {
     mCapacity *= 2;
@@ -69,19 +75,13 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
   mObjs[mCount - 1].obj = obj;
   mObjs[mCount - 1].val = val;
 
-  if (mHeapified)
-  {
-    std::push_heap(mObjs, mObjs + mCount, NodeLessThan);
-  }
+  std::push_heap(mObjs, mObjs + mCount, NodeLessThan);
 }
 
 - (id)pop
 {
-  if (!mHeapified)
-  {
-    [self buildHeap];
-  }
-  
+  if ([self empty]) return nil;
+
   std::pop_heap(mObjs, mObjs + mCount, NodeLessThan);
   mCount--;
 
@@ -90,12 +90,14 @@ static bool NodeLessThan(struct JCPQNode &n1, struct JCPQNode &n2)
 
 - (id)first
 {
-  return nil;
+  if ([self empty]) return nil;
+  
+  return mObjs[0].obj;
 }
 
 - (void)clear
 {
-  
+  //TODO:
 }
 
 @end
