@@ -86,7 +86,7 @@ static const  NSInteger testData[25] = {
   id<JCPriorityQueueObject> first_returned = [_queue pop];
   
   STAssertEquals(first_object, first_returned, @"First element returned should be the same object originally added");
-  STAssertEquals(first_object.value, (NSInteger)10, @"First element should be equal to the element added. Value was %d", first_returned.value);
+  STAssertEquals(first_object.cost, (NSInteger)10, @"First element should be equal to the element added. Value was %d", first_returned.cost);
 }
 
 - (void)testPriorityQueueHandlesAFewPredictableValues
@@ -97,16 +97,16 @@ static const  NSInteger testData[25] = {
   [_queue addObject:[PriotityTestObject objectWithValue:40]];
   
   id <JCPriorityQueueObject> obj = [_queue pop];
-  STAssertTrue(obj.value == 10, nil);
+  STAssertTrue(obj.cost == 10, nil);
   
   obj = [_queue pop];
-  STAssertTrue(obj.value == 20, nil);
+  STAssertTrue(obj.cost == 20, nil);
 
   obj = [_queue pop];
-  STAssertTrue(obj.value == 30, nil);
+  STAssertTrue(obj.cost == 30, nil);
 
   obj = [_queue pop];
-  STAssertTrue(obj.value == 40, nil);
+  STAssertTrue(obj.cost == 40, nil);
   
   obj = [_queue pop];
   STAssertTrue(obj == nil, nil);
@@ -134,7 +134,7 @@ static const  NSInteger testData[25] = {
   
   id<JCPriorityQueueObject> first_out = [_queue pop];
   
-  STAssertEquals(first_out.value, lowest_value, @"Popping the first value should be equal to the lowest entered");
+  STAssertEquals(first_out.cost, lowest_value, @"Popping the first value should be equal to the lowest entered");
 }
 
 - (void)testPriorityQueueCanResortBasedOnAValueChange
@@ -149,7 +149,7 @@ static const  NSInteger testData[25] = {
 
   STAssertEquals([_queue first], first_top, @"first item should be the lowerst so far");
 
-  sample.value = 5;
+  sample.cost = 5;
   [_queue resort:sample];
 
   STAssertEquals([_queue first], sample, @"first item should now be the one just modified");

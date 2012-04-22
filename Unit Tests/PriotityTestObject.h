@@ -11,7 +11,7 @@
 
 @interface PriotityTestObject : NSObject <JCPriorityQueueObject>
 
-@property (nonatomic, assign, readwrite) NSInteger value;
+@property (nonatomic, assign) NSInteger cost;
 
 + (id)objectWithValue:(NSInteger)value;
 

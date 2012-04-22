@@ -31,7 +31,7 @@
 
 @implementation JCPriorityQueueHeaderNode
 
-- (NSInteger)value
+- (NSInteger)cost
 {
   return NSIntegerMin;
 }
@@ -79,7 +79,7 @@
   
   id<JCPriorityQueueObject> parent = [self.queue objectAtIndex:parent_index];
   
-  while (object.value < parent.value) //compare with parent
+  while (object.cost < parent.cost) //compare with parent
   {
     [self.queue removeObject:object];
     [self.queue insertObject:object atIndex:parent_index];
@@ -131,14 +131,14 @@
     {
       child_2 = [self.queue objectAtIndex:child + 1];
 
-      if (child_2.value < child_obj.value)
+      if (child_2.cost < child_obj.cost)
       {
         child++;
         child_obj = child_2;
       }
     }
 
-    if (last_object.value > child_obj.value)
+    if (last_object.cost > child_obj.cost)
     {
       [self.queue removeObject:child_obj];
       [self.queue insertObject:child_obj atIndex:i];
@@ -162,7 +162,7 @@
 
   id<JCPriorityQueueObject> parent = [self.queue objectAtIndex:parent_index];
 
-  while (object.value < parent.value) //compare with parent
+  while (object.cost < parent.cost) //compare with parent
   {
     [self.queue removeObject:object];
     [self.queue insertObject:object atIndex:parent_index];
@@ -191,7 +191,7 @@
 
 -(NSString *)description
 {
-  return [[self queue] description];
+  return [NSString stringWithFormat:@"JCPriorityQueue: %u items",[self count]];
 }
 
 @end

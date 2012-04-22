@@ -30,7 +30,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol JCPriorityQueueObject <NSObject>
-- (NSInteger)value;
+- (NSInteger)cost;
 @end
 
 @interface JCPriorityQueueHeaderNode : NSObject <JCPriorityQueueObject>

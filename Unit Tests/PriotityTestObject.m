@@ -11,7 +11,7 @@
 
 @implementation PriotityTestObject
 
-@synthesize value = _value;
+@synthesize cost = _cost;
 
 + (id)objectWithValue:(NSInteger)value
 {
@@ -27,14 +27,14 @@
 {
   if ((self = [super init]))
   {
-    _value = value;
+    _cost = value;
   }
   return self;
 }
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%d", _value];
+  return [NSString stringWithFormat:@"%d", _cost];
 }
 
 @end
