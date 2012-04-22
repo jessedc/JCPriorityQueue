@@ -155,6 +155,28 @@
   return first_object_to_return;
 }
 
+- (void)resort:(id<JCPriorityQueueObject>)object
+{
+  NSUInteger last_index = [self.queue indexOfObject:object];
+  NSUInteger parent_index = last_index / 2;
+
+  id<JCPriorityQueueObject> parent = [self.queue objectAtIndex:parent_index];
+
+  while (object.value < parent.value) //compare with parent
+  {
+    [self.queue removeObject:object];
+    [self.queue insertObject:object atIndex:parent_index];
+
+    [self.queue removeObject:parent];
+    [self.queue insertObject:parent atIndex:last_index]; //swap
+
+    last_index = parent_index; //increment
+    parent_index /= 2;
+
+    parent = [self.queue objectAtIndex:parent_index]; //re-assign parent
+  }
+}
+
 - (id<JCPriorityQueueObject>)first
 {
   if (self.queue.count < 2) return nil;

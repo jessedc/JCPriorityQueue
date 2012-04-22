@@ -40,6 +40,7 @@
 
 - (void)addObject:(id<JCPriorityQueueObject>)object;
 - (id<JCPriorityQueueObject>)pop;
+- (void)resort:(id<JCPriorityQueueObject>)object;
 
 - (id<JCPriorityQueueObject>)first;
 - (NSUInteger)count;

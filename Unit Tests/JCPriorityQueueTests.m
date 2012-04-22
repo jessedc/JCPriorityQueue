@@ -137,4 +137,23 @@ static const  NSInteger testData[25] = {
   STAssertEquals(first_out.value, lowest_value, @"Popping the first value should be equal to the lowest entered");
 }
 
+- (void)testPriorityQueueCanResortBasedOnAValueChange
+{
+  PriotityTestObject *sample = [PriotityTestObject objectWithValue:20];
+  PriotityTestObject *first_top = [PriotityTestObject objectWithValue:10];
+
+  [_queue addObject:sample];
+  [_queue addObject:first_top];
+  [_queue addObject:[PriotityTestObject objectWithValue:30]];
+  [_queue addObject:[PriotityTestObject objectWithValue:40]];
+
+  STAssertEquals([_queue first], first_top, @"first item should be the lowerst so far");
+
+  sample.value = 5;
+  [_queue resort:sample];
+
+  STAssertEquals([_queue first], sample, @"first item should now be the one just modified");
+}
+
+
 @end
