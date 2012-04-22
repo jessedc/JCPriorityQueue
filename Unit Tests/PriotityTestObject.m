@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%l", _value];
+  return [NSString stringWithFormat:@"%d", _value];
 }
 
 @end

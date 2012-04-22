@@ -36,6 +36,11 @@
   return NSIntegerMin;
 }
 
+- (NSString *)description
+{
+  return @"HeaderNode";
+}
+
 @end
 
 @interface JCPriorityQueue()
