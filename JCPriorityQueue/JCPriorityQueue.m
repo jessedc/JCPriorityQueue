@@ -191,7 +191,7 @@
 
 -(NSString *)description
 {
-  return [NSString stringWithFormat:@"JCPriorityQueue: %u items",[self count]];
+  return [NSString stringWithFormat:@"JCPriorityQueue: %lu items",[self count]];
 }
 
 @end
